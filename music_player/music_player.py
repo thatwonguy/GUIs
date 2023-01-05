@@ -33,3 +33,19 @@ stop_button.pack()
 
 # Run the main event loop
 window.mainloop() 
+
+################## quick and dirty pygame music player test
+# import pygame
+
+# # Initialize pygame
+# pygame.init()
+
+# # Load the MP3 file
+# pygame.mixer.music.load('music.mp3')
+
+# # Play the MP3 file
+# pygame.mixer.music.play()
+
+# # Run the main event loop to keep the program running until the song finishes
+# while pygame.mixer.music.get_busy():
+#   pygame.time.Clock().tick(10)

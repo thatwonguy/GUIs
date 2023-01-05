@@ -25,6 +25,12 @@ def pause():
 pause_button = tk.Button(window, text="Pause", command=pause)
 pause_button.pack()
 
+# Create the unpause button
+def unpause():
+  pygame.mixer.music.unpause()
+unpause_button = tk.Button(window, text="Unpause", command=unpause)
+unpause_button.pack()
+
 # Create the stop button
 def stop():
   pygame.mixer.music.stop()

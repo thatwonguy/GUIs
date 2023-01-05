@@ -1,2 +1,2 @@
 # GUIs
-GUI exploration
+GUI exploration, and testing of github features

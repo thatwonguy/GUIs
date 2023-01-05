@@ -30,4 +30,4 @@ stop_button = tk.Button(window, text="Stop", command=stop)
 stop_button.pack()
 
 # Run the main event loop
-window.mainloop()
+window.mainloop() 

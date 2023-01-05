@@ -19,6 +19,12 @@ def play():
 play_button = tk.Button(window, text="Play", command=play)
 play_button.pack()
 
+# Create the fade out button
+def fadeout():
+  pygame.mixer.music.fadeout()
+fadeout_button = tk.Button(window, text="Fade Out", command=fadeout)
+fadeout_button.pack()
+
 # Create the pause button
 def pause():
   pygame.mixer.music.pause()

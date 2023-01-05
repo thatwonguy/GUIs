@@ -4,26 +4,26 @@ import pygame
 #Initialize pygame
 pygame.mixer.init()
 
+pygame.display.set_mode((400, 300))
+
 #Create the main window
 window = tk.Tk()
 window.title("Music Player")
 
 #Load the music file
-# pygame.mixer.music.load('music.mp3')
+pygame.mixer.music.load('music.mp3')
 
 # Create the play button
 def play():
-  # pygame.mixer.music.play() #doesn't work because uncompressed Wav file
-  music = pygame.mixer.Sound('music')
-  music.play()
+  pygame.mixer.music.play()
 play_button = tk.Button(window, text="Play", command=play)
 play_button.pack()
 
-# # Create the pause button
-# def pause():
-#   pygame.mixer.music.pause()
-# pause_button = tk.Button(window, text="Pause", command=pause)
-# pause_button.pack()
+# Create the pause button
+def pause():
+  pygame.mixer.music.pause()
+pause_button = tk.Button(window, text="Pause", command=pause)
+pause_button.pack()
 
 # Create the stop button
 def stop():

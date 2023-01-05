@@ -1,4 +1,4 @@
-# GUIs
+# GUIs - "graphical user interfaces"
 This is a basic practice repo to start missing with and collaborating and building on GUI (graphical user interface), and to help with exploration and testing of github features, and how collaboration might work on a team of developers for creation of software etc.
 
 # Below are generic instructions to add your local code to a github repo. When you connect to a github repo to start contributing, create your own seperate work branch and commit to that within the repo so that others can review your branch code and merge it into main branch after everything looks good. 

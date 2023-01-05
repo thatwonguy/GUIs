@@ -13,15 +13,17 @@ pygame.mixer.music.load('something_in_me.mp3')
 
 # Create the play button
 def play():
-  pygame.mixer.music.play()
+  # pygame.mixer.music.play() #doesn't work because uncompressed Wav file
+  music = pygame.mixer.Sound('something_in_me.mp3')
+  music.play()
 play_button = tk.Button(window, text="Play", command=play)
 play_button.pack()
 
-# Create the pause button
-def pause():
-  pygame.mixer.music.pause()
-pause_button = tk.Button(window, text="Pause", command=pause)
-pause_button.pack()
+# # Create the pause button
+# def pause():
+#   pygame.mixer.music.pause()
+# pause_button = tk.Button(window, text="Pause", command=pause)
+# pause_button.pack()
 
 # Create the stop button
 def stop():

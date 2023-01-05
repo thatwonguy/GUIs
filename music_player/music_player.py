@@ -9,7 +9,7 @@ window = tk.Tk()
 window.title("Music Player")
 
 #Load the music file
-pygame.mixer.music.load('test_song.mp3')
+pygame.mixer.music.load('something_in_me.mp3')
 
 # Create the play button
 def play():

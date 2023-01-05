@@ -21,7 +21,7 @@ play_button.pack()
 
 # Create the fade out button
 def fadeout():
-  pygame.mixer.music.fadeout()
+  pygame.mixer.music.fadeout(3000)
 fadeout_button = tk.Button(window, text="Fade Out", command=fadeout)
 fadeout_button.pack()
 

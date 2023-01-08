@@ -11,7 +11,7 @@ pygame.mixer.init()
 window = tk.Tk()
 
 #Set the size of the window
-window.geometry('400x100')
+window.geometry('600x300')
 
 #All window to be resizable by user
 window.resizable(True,True)
@@ -26,31 +26,36 @@ pygame.mixer.music.load('music.mp3')
 def play():
   pygame.mixer.music.play()
 play_button = tk.Button(window, text="Play", command=play)
-play_button.pack(side='left')
+play_button.pack(expand=1,fill=tk.BOTH)
+# play_button.place(x=0,y=0)
 
 # Create the fade out button
 def fadeout():
   pygame.mixer.music.fadeout(3000)
 fadeout_button = tk.Button(window, text="Fade Out", command=fadeout)
-fadeout_button.pack(side='left')
+fadeout_button.pack(expand=1,fill=tk.BOTH)
+# fadeout_button.place(x=320,y=0)
 
 # Create the pause button
 def pause():
   pygame.mixer.music.pause()
 pause_button = tk.Button(window, text="Pause", command=pause)
-pause_button.pack(side='left')
+pause_button.pack(expand=1,fill=tk.BOTH)
+# pause_button.place(x=160,y=0)
 
 # Create the unpause button
 def unpause():
   pygame.mixer.music.unpause()
 unpause_button = tk.Button(window, text="Unpause", command=unpause)
-unpause_button.pack(side='left')
+unpause_button.pack(expand=1,fill=tk.BOTH)
+# unpause_button.place(x=240,y=0)
 
 # Create the stop button
 def stop():
   pygame.mixer.music.stop()
 stop_button = tk.Button(window, text="Stop", command=stop)
-stop_button.pack(side='left')
+stop_button.pack(expand=1,fill=tk.BOTH)
+# stop_button.place(x=80,y=0)
 
 # Run the main event loop
 window.mainloop() 

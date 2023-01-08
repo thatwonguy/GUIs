@@ -1,5 +1,8 @@
 import tkinter as tk
 import pygame
+import pyaudio
+import wave
+
 
 #Initialize pygame
 pygame.mixer.init()
@@ -57,6 +60,49 @@ stop_button = tk.Button(window, text="Stop", command=stop)
 stop_button.pack(expand=1,fill=tk.BOTH)
 # stop_button.place(x=80,y=0)
 
+# Initialize pyadio
+p = pyaudio.PyAudio()
+
+def record_audio():
+  # Open a wave file to write the audio
+  audio_file = wave.open('audio.wav', 'wb')
+  audio_file.setnchannels(1)
+  audio_file.setsampwidth(p.get_sample_size(pyaudio.paInt16))
+  audio_file.setframerate(44100)
+
+  # Start recording
+  stream = p.open(format=pyaudio.paInt16, channels=1, rate=44100, input=True, frames_per_buffer=1024)
+  audio_data = stream.read(44100)
+  audio_file.writeframes(audio_data)
+  stream.stop_stream()
+  stream.close()
+  audio_file.close()
+
+# Create a function to play audio
+def play_audio():
+  # Open the wave file
+  audio_file = wave.open('audio.wav', 'rb')
+  
+  # Start playback
+  stream = p.open(format=p.get_format_from_width(audio_file.getsampwidth()),
+                  channels=audio_file.getnchannels(),
+                  rate=audio_file.getframerate(),
+                  output=True)
+  audio_data = audio_file.readframes(1024)
+  while audio_data:
+    stream.write(audio_data)
+    audio_data = audio_file.readframes(1024)
+  stream.stop_stream()
+  stream.close()
+  audio_file.close()
+
+# Create a record button
+record_button = tk.Button(window, text="Record", command=record_audio)
+record_button.pack(expand=1,fill=tk.BOTH)
+
+# Create a play button
+play_recording = tk.Button(window, text="Play Recording", command=play_audio)
+play_recording.pack(expand=1,fill=tk.BOTH)
+
 # Run the main event loop
 window.mainloop() 
-

@@ -11,7 +11,6 @@ This is a basic practice repo to start messing with and collaborating and buildi
  ## $ git add .
 Adds the file to your local repository and stages it for commit. To unstage a file, use 'git reset HEAD YOUR-FILE'.
 
-
 5. Commit the file that you've staged in your local repository.
 ## $ git commit -m "Add existing file"
 Commits the tracked changes and prepares them to be pushed to a remote repository. To remove this commit and modify the file, use 'git reset --soft HEAD~1' and commit and add the file again.
@@ -24,3 +23,9 @@ Pushes the changes in your local repository up to the remote repository you spec
 # When you are ready to have your code reviewed, submit a pull request.
 
 When you are testing this code in your local machine after cloning it to your local machine, make sure you are in the correct directory in your terminal window to ensure playback of the music file works. 
+
+1. If you make your own branch within a repository and the main branch ends up being ahead of your branch with the most upto date changes and you'd like to work with the latest, you need to checkout to your branch that you like to work in first:
+# git checkout [your branch name]
+
+2. Once you are in your own branch you need to update this branch by pulling all the updates from the main branch of your desire:
+# git pull --rebase origin main

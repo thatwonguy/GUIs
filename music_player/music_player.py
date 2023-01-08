@@ -61,4 +61,3 @@ window.mainloop()
 # # Run the main event loop to keep the program running until the song finishes
 # while pygame.mixer.music.get_busy():
 #   pygame.time.Clock().tick(10)
-# test
